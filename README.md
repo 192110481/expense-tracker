@@ -1,80 +1,129 @@
-[# Expense Tracker API
+# Expense Tracker Backend API
 
-## Overview
+A secure backend REST API for managing personal income and expenses, built using **Spring Boot, Spring Security, JWT, and MySQL**.
 
-Expense Tracker is a backend REST API built using Spring Boot that allows users to manage their daily expenses efficiently. The application supports user registration, authentication, and full CRUD operations for expense management.
+This project demonstrates authentication, transaction management, financial summaries, and pagination with a scalable backend architecture.
 
-This project demonstrates backend development concepts such as REST APIs, database integration, authentication, and secure password storage.
+---
 
-## Tech Stack
+## 🚀 Live API
 
-* Java
+Base URL
+
+```
+https://expense-tracker-he9m.onrender.com
+```
+
+Example endpoint
+
+```
+GET /api/transactions
+```
+
+---
+
+## ⚙️ Tech Stack
+
+* Java 17
 * Spring Boot
+* Spring Security
+* JWT Authentication
 * Spring Data JPA
 * MySQL
 * Maven
-* REST APIs
-* JSON
-* Postman (API testing)
+* Docker
+* Render (Deployment)
+* Railway (Database)
 
-## Features
+---
+
+## 🔐 Features
+
+### Authentication
 
 * User Registration
-* Secure Password Encryption
-* Add Expense
-* Update Expense
-* Delete Expense
-* View All Expenses
-* MySQL Database Integration
-* RESTful API Architecture
+* Login with JWT token
+* Password encryption using BCrypt
 
-## API Endpoints
+### Transaction Management
 
-### User APIs
+* Add income/expense transactions
+* Categorize transactions
+* Retrieve transaction history
 
-POST /register
-Register a new user
+### Financial Insights
 
-### Expense APIs
+* Monthly transaction filtering
+* Income vs Expense summary
 
-GET /expenses
-Retrieve all expenses
+### Performance
 
-POST /expenses
-Add a new expense
+* Pagination for large datasets
 
-PUT /expenses/{id}
-Update an existing expense
+### Security
 
-DELETE /expenses/{id}
-Delete an expense
+* JWT-based stateless authentication
+* Protected REST endpoints
 
-## Project Structure
+---
 
-src
-┣ controller
-┣ service
-┣ repository
-┣ model
-┗ config
+## 📡 API Endpoints
 
-## Database
+### Authentication
 
-The application uses MySQL to store user and expense data.
+```
+POST /api/auth/register
+POST /api/auth/login
+```
 
-## Testing
+### Transactions
 
-All APIs were tested using Postman.
+```
+POST /api/transactions
+GET /api/transactions
+GET /api/transactions/page
+GET /api/transactions/month
+GET /api/transactions/summary
+```
 
-## Future Improvements
+---
 
-* JWT Authentication
-* Expense Categories
-* Monthly Expense Reports
-* Frontend UI Integration
-* Deployment to Cloud
+## 🗄 Database Structure
 
-## Author
+Tables used:
+
+* users
+* roles
+* categories
+* transactions
+
+Relationships:
+
+```
+User 1 --- * Transactions
+Category 1 --- * Transactions
+```
+
+---
+
+## ☁ Deployment
+
+Backend deployed on **Render**
+
+Database hosted on **Railway MySQL**
+
+---
+
+## 📌 Future Improvements
+
+* Frontend UI (React / Angular)
+* Microservices architecture
+* Caching using Redis
+* API documentation with Swagger
+* Role-based access control improvements
+
+---
+
+## 👨‍💻 Author
 
 Venkatesh Kodaganti
-](https://expense-tracker-he9m.onrender.com/api/transactions)
